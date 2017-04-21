@@ -127,3 +127,37 @@ body {
 	font-size: 15px;
 	padding: 7px 3px;
 }
+
+.artist-container{
+  background-color:#eee;
+  height : auto !important;
+  padding:25px;
+  border-radius: 20px;
+}
+.artist-title{
+  font-size: 25px;
+}
+.artist-domain{
+  font-size: 18px;
+  color:#777;
+}
+#artist-donate{
+  background-color:greenyellow;
+  border-radius: 20px;
+  font-size: 18px;
+  color:#fff;
+  padding : 3px 10px;
+  cursor: pointer;
+  float:right;
+}
+.artist-textarea{
+  font-family: sans-serif;
+}
+
+.artist-pic{
+  margin-bottom:20px;
+}
+
+.art-container{
+  height:300px;
+}
