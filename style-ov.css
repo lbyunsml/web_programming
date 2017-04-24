@@ -135,8 +135,12 @@ body {
     }
 } 
 /* ~~~~~~~~~~~~~~~~~~~~~~~ added by SM ~~~~~~~~~~~~~~~~~~~ */
+/* menu container */
 .overview-container {
     position:relative;
+    align-items:center;
+    margin-top:20px;
+    margin-bottom:50px;
 }
 
 
