@@ -72,6 +72,10 @@ body {
       padding: 10px;}
 
 /*for main artwork*/
+.main-image{
+	float: left;
+}
+
 .explanation{
 	float: right;
 }
