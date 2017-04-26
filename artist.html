@@ -30,6 +30,7 @@
 
   <!-- Custom styles for this template -->
   <link href="style.css" rel="stylesheet">
+  <link href="style-artist.css" rel="stylesheet">
 
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -94,19 +95,6 @@
                   </li>
                 </ul>
               </li>
-
-              <!--Popular hashtags-->
-              <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">#Popular <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">#self_portrait</a></li>
-                  <li><a href="#">#gray</a></li>
-                  <li><a href="#">#clay_animation</a></li>
-                  <li><a href="#">#ghibli</a></li>
-                  <li><a href="#">#watercolor</a></li>
-                  <li><a href="#">#for_sale</a></li>
-                </ul>
-              </li>
             </ul>
 
             <!--sign in-->
@@ -156,12 +144,29 @@
               <img src="pics/work20.jpg" alt="Artwork" class="artwork-image" style="width:100%">
             </div>
             <div class = "artist-textarea">
-              <p class="artist-title">John Doe</p>
-              <p class="artist-domain">동양화</p>
-              <span id="artist-donate">Donate</span>
+              <p class="artist-title">John Doe
+                <span class="artist-domain">동양화</span>
+              </p>
+              <p class="artist-desp">
+                이런곳에 관심이 있고 저런곳에 관심이 있습니다.<br> Facebook: loveArt@naver.com
+              </p>
+              <div class="artist-btn-container"><span id="artist-donate">Donate</span></div>
+              
+              <div class="artist-keyword-container">
+                <p>키워드</p>
+                <span class="artist-keyword">매화</span>
+                <span class="artist-keyword">난초</span>
+                <span class="artist-keyword">국화</span>
+                <span class="artist-keyword">대나무</span>
+                <span class="artist-keyword">수묵화</span>
+                <span class="artist-keyword">벼루</span>
+                <span class="artist-keyword">먹물</span>
+              </div>
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-8">
           <div class="row">
             <div class="col-md-4 art-container">
               <div class="artwork-container">
