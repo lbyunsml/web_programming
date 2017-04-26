@@ -59,7 +59,6 @@
             <a class="navbar-brand" href="#">SNU_ARTS</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-
             <!--categories-->
             <ul class="nav navbar-nav navbar-centered">
 
@@ -93,6 +92,19 @@
                       <li><a href="#">공예</a></li>
                     </ul>
                   </li>
+                </ul>
+              </li>
+
+              <!--Popular hashtags-->
+              <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">#Popular <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">#self_portrait</a></li>
+                  <li><a href="#">#gray</a></li>
+                  <li><a href="#">#clay_animation</a></li>
+                  <li><a href="#">#ghibli</a></li>
+                  <li><a href="#">#watercolor</a></li>
+                  <li><a href="#">#for_sale</a></li>
                 </ul>
               </li>
             </ul>
@@ -328,6 +340,21 @@
           <p>&copy; 2017 Intro. to Web Programming Team I: 박지수, 변승무, 김진모, 김종석</p>
         </footer>
       </div> <!-- /container -->
+      
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="bootstrap/dist/js/jquery.js"></script>
+
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 
 
     <!-- Bootstrap core JavaScript
