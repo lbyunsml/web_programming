@@ -1,3 +1,6 @@
+<!-- dummy static site to show how the navbar changes after login -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +10,11 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="description" content="">
   <meta name="author" content="">
-
   <link rel="icon" href="/pics/favicon.ico">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
-  </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <title>SNU_ARTWORKS</title>
-
 
   <!-- Bootstrap core CSS -->
   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -89,7 +89,7 @@
                 </ul>
               </li>
 
-<!--
+              <!--Popular hashtags-->
               <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">#Popular <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -100,33 +100,53 @@
                   <li><a href="#">#watercolor</a></li>
                   <li><a href="#">#for_sale</a></li>
                 </ul>
-              </li>       
--->
+              </li>    
             </ul>
 
-           
-            <!--sign in-->
-            <ul id="signInDropdown" class="nav navbar-nav navbar-right">
+            <!-- upload button -->
+            <ul class="nav navbar-nav navbar-centered2">
+             <button class="btn btn-success navbar-btn">Add work</button>
+            </ul>
+
+
+            <!--my profile-->
+            <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
-                <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-default navbar-btn dropdown-toggle">Sign in <span class="caret"></span></button>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <span class="glyphicon glyphicon-user"></span> 
+                  <strong>Jisoo </strong>
+                  <span class="glyphicon glyphicon-chevron-down"></span>
+                </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <form class="navbar-form form" role="form">
-                      <div class="form-group">
-                        <input id="emailInput" placeholder="email address" class="form-control" type="email">
+                    <div class="navbar-login">
+                      <div class="row">
+                        <div class="col-lg-4">
+                          <p class="text-center">
+                            <span class="glyphicon glyphicon-user icon-size"></span>
+                          </p>
+                        </div>
+                        <div class="col-lg-8">
+                          <p class="text-left"><strong>Jisoo Park</strong></p>
+                          <p class="text-left small">jisoosemail@email.com</p>
+                          <p class="text-left">
+                            <a href="#" class="btn btn-primary btn-block btn-sm">My Profile</a>
+                          </p>
+                        </div>
                       </div>
-                      <div class="form-group">
-                        <input id="passwordInput" placeholder="password" class="form-control" type="password">
+                    </div>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <div class="navbar-login navbar-login-session">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <p>
+                            <a href="main.html" class="btn btn-danger btn-block">Sign out</a>
+                          </p>
+                        </div>
                       </div>
-                      <div class="form-group">
-                      <!-- <button type="submit" class="btn btn-primary form-control">Sign In</button> -->
-                      <a href="main_afterlogin.html" class="btn btn-info" role="button">Sign In</a>
-
-                      </div>
-                      <div class="form-group">  
-                        <span class="pull-right"><a href="#">Join us!</a></span>
-                      </div>
-                    </form>
+                    </div>
                   </li>
                 </ul>
               </li>
@@ -165,7 +185,6 @@
 
               <div class="item active">
                 <img src="pics/featured1.jpg" alt="featured1" width="460" height="345">
-
                 <div class="carousel-caption">
                   <h3>Visual Identity Awards</h3>
                   <p>Celebrating creative excellence and consistency across branding design</p>
@@ -174,7 +193,6 @@
 
               <div class="item">
                 <img src="pics/featured2.jpg" alt="featured2" width="460" height="345">
-
                 <div class="carousel-caption">
                   <h3>Artist Interview</h3>
                   <p>Jisoo Park's setup in her New York studio</p>
@@ -292,6 +310,7 @@
           </div>
           <div class="col-md-3">
 
+
 <a href="artwork.html">
             <div class="artwork-container">
               <img src="pics/d4.jpg" alt="Artwork" class="artwork-image" style="width:100%">
@@ -303,7 +322,7 @@
             </div>
 </a>
 
-
+            
           </div>
         </div>
 
