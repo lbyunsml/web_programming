@@ -32,7 +32,7 @@ flex-shrink: 0;
 }
 
 .explanation{
-	float: right;
+	margin-left: 70px
 }
 
 .artwork-image {
