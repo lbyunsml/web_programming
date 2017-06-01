@@ -1,1 +1,12 @@
 <h1>New Artist</h1>
+
+<% @artist_all.each do |artist| %>
+  <div class = "artist_div">
+    <%= artist.id %>
+    </br>
+    <%= artist.name %>
+  </div>
+<% end %>
+
+
+
