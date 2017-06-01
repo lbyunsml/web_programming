@@ -23,7 +23,6 @@
 .artist-textarea{
   font-family: sans-serif;
 }
-
 .artist-pic{
   margin-bottom:20px;
 }
@@ -32,7 +31,8 @@
   height:300px;
 }
 .artist-btn-container{
-  text-align: right;
+  margin-top:10px;
+  text-align: center;
 }
 .artist-keyword-container{
   border-top-color: #999;
