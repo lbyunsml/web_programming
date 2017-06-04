@@ -1,0 +1,12 @@
+<h1>Category#index</h1>
+
+
+<% @artwork_all.each do |artwork| %>
+  <div class = "artwork_div">
+    <%= artwork.name %>
+    </br>
+    <%= artwork.description %>
+    </br>
+    <%= artwork.artist_id %>
+  </div>
+<% end %>

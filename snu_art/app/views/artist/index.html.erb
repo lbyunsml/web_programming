@@ -16,13 +16,20 @@
 
     </head>
 
-
     <body>
       
       <%= render 'nav' %>
       
-
-
+<h1>Artworks</h1>
+<% @artwork_all.each do |artwork| %>
+  <div class = "artwork_div">
+    <%= artwork.name %>
+    </br>
+    <%= artwork.description %>
+    </br>
+    <%= artwork.artist_id %>
+  </div>
+<% end %>
       <!-- sliding banner -->
       <div class="jumbotron">
         <div class="container">
