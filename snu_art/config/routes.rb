@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'category/index'
+  get 'category/' => 'category#index'
 
 	resources:artist do
       resources:artwork

@@ -1,12 +1,24 @@
-<h1>Category#index</h1>
+<%= stylesheet_link_tag "style.css" %>
 
+  <%= render 'artist/nav' %>
 
-<% @artwork_all.each do |artwork| %>
-  <div class = "artwork_div">
-    <%= artwork.name %>
-    </br>
-    <%= artwork.description %>
-    </br>
-    <%= artwork.artist_id %>
-  </div>
-<% end %>
+<h2><%= @par %></h2>
+
+  <% if @artwork_all != nil %>
+    <% @artwork_all.each_slice(4) do |slice| %>
+      <div class="row">
+        <% slice.each do |artwork| %>
+        <div class="col-md-3">
+          <div class="artwork-container">
+            <img src="/image/<%= artwork.img_path %>" alt="Artwork" class="artwork-image" style="width:100%">
+            <div class="artwork-text">
+              <div class="text-title"><%= artwork.name %></div>
+              <div class="text-desc"><%= artwork.description %></div>
+              <div class="text-artist"><%= Artist.find(artwork.artist_id).name %></div>    
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>

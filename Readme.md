@@ -52,5 +52,10 @@ db/developent.sqlite3
 
 `rails generate controller category index` 하면 /category 를 다루는 컨트롤러와 index.html.erb가 생기고 routes.rb에도 자동으로 category/index가 생긴다. 근데 /category/index로 가야한다;;
 
+get 'category/' => 'category#index' 이렇게 하면 된다! 직접 controller지정!!
+
+Category에서 get방식으로 파라미터를 받음. 현재 photo, metal, oriental이 아니면 metal으로 자동으로 리다이렉트함.
+
 
 `rails generate model Artwork name:string img_path:string description:string category:string artist:references`
+
