@@ -16,7 +16,7 @@ localhost:3000/
 http://localhost:3000/artist/new : 현재 db에 있는 artist들의 것을 보여주는 페이지 
 http://localhost:3000/artist/1 : artist 1의 페이지
 http://localhost:3000/artist/1/artwork : artist1이 그린 그림들 목록
-http://localhost:3000/category/index : 전체 그림 목록
+http://localhost:3000/category?cat=metal : metal에 대한 카테고리
 
 
 
