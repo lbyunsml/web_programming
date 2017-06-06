@@ -1,3 +1,5 @@
+
+<% @c_list = ["Photo", "Metal", "East","West","Industrial","Illustration"] %>
       <!-- navigation bar: site logo, search, login -->
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -8,7 +10,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">SNU_ARTS</a>
+            <a class="navbar-brand" href="<%= root_path %>">SNU_ARTS</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
 
@@ -18,49 +20,11 @@
               <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">Categories <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-
-                  <li><a href="#">UI/UX</a></li>
-                  <li><a href="#">가구 디자인인</a></li>
-                  <li><a href="#">건축</a></li>
-                  <li><a href="#">그래픽 디자인</a></li>
-                  <li><a href="#">모션 그래픽</a></li>
-                  <li><a href="#">산업 디자인</a></li>
-                  <li><a href="#">공예</a></li>
-                  <li><a href="#">사진</a></li>
-                  <li><a href="#">일러스트레이션</a></li>
-                  <li><a href="#">패션</a></li>
-                  <li><a href="#">동양화</a></li>
-                  <li><a href="#">서양화</a></li>
-                  <li><a href="#">만화</a></li>
-
-                  <li class="divider"></li>
-
-                  <li class="dropdown-submenu">
-                    <a href="#">Majors</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">동양화</a></li>
-                      <li><a href="#">서양화</a></li>
-                      <li><a href="#">조소</a></li>
-                      <li><a href="#">디자인</a></li>
-                      <li><a href="#">공예</a></li>
-                    </ul>
-                  </li>
+                <% @c_list.each do |cat| %>    
+                  <li><a href="<%= category_path %>/?cat=<%= cat %>"><%= cat %></a></li>
+                <% end %>
                 </ul>
               </li>
-
-<!--
-              <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">#Popular <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">#self_portrait</a></li>
-                  <li><a href="#">#gray</a></li>
-                  <li><a href="#">#clay_animation</a></li>
-                  <li><a href="#">#ghibli</a></li>
-                  <li><a href="#">#watercolor</a></li>
-                  <li><a href="#">#for_sale</a></li>
-                </ul>
-              </li>       
--->
             </ul>
 
            

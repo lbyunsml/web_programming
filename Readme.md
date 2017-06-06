@@ -43,6 +43,9 @@ db/seeds.rb에 더미데이터 넣기
 디비 넣기
 	`rake db:seed`
     이때, 이미 들어있는 데이터도 다시 집어넣으므로, 한번 집어 넣은 것은 comment처리를 하자
+    
+	`rake db:reset`
+    디비를 seed안의 것으로 reset 한다. 이것을 쓰자.
 
 db/developent.sqlite3
   sqlite를 뜯어볼 수 있는 프로그램(Ex.DB browser for SQLite)을 사용해서 modify가능
