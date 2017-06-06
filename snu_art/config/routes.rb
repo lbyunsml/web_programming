@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'category/' => 'category#index'
-
+  	#resources:artworks
+  	resources:artwork
 	resources:artist do
       resources:artwork
     end

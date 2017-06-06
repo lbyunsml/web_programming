@@ -1,5 +1,7 @@
 <h1>ArtWorks</h1>
 
+<%= link_to 'New Artwork', new_artwork_path %>
+
 <% @artwork_all.each do |artwork| %>
   <div class = "artwork_div">
     <%= artwork.name %>
