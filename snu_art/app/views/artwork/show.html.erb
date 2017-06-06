@@ -1,0 +1,24 @@
+<!--ARTWORK PAGE-->
+
+<%= stylesheet_link_tag "style.css" %>
+<%= stylesheet_link_tag "style_artwork.css" %>
+
+  <%= render 'artist/nav' %>
+
+<div>
+  <img src="/artwork/<%= @artwork.img_path %>" alt="Artwork" class="main-artwork" width="920" height="690">
+</div>
+<div class="explanation">
+  <h3><%= @artwork.name %></h3>
+  <p><%= @artwork.description %></p>
+  <h4>Artist: <a href="<%=artist_path(@artist.id)%>"><%= @artist.name %></a> </h4>
+  <h4><%= @artwork.created_at.strftime("%Y/%m/%d") %></h4>
+</div>
+  
+<!--page bar at the bottom-->
+<hr>
+  
+<footer>
+  <p>&copy; 2017 Intro. to Web Programming Team I: 박지수, 변승무, 김진모, 김종석</p>
+</footer>
+   

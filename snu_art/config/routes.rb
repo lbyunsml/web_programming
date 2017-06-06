@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'category/' => 'category#index'
-
+  get    '/login' => 'sessions#new'
+  post   '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+  
 	resources:artist do
       resources:artwork
     end

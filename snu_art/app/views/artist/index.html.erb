@@ -94,6 +94,7 @@
     <div class="row">
       <% slice.each do |artwork| %>
       <div class="col-md-3">
+        <a href="<%= artist_artwork_path(artwork.artist_id,artwork.id)%>">  
         <div class="artwork-container">
           <img src="/artwork/<%= artwork.img_path %>" alt="Artwork" class="artwork-image" style="width:100%">
           <div class="artwork-text">
@@ -102,6 +103,7 @@
             <div class="text-artist"><%= Artist.find(artwork.artist_id).name %></div>    
           </div>
         </div>
+        </a>
       </div>
       <% end %>
     </div>
