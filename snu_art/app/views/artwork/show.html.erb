@@ -12,6 +12,7 @@
   <h3><%= @artwork.name %></h3>
   <p><%= @artwork.description %></p>
   <h4>Artist: <a href="<%=artist_path(@artist.id)%>"><%= @artist.name %></a> </h4>
+  <h4>Category: <%= @artwork.category %></h4>
   <h4><%= @artwork.created_at.strftime("%Y/%m/%d") %></h4>
 </div>
   

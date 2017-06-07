@@ -1,8 +1,11 @@
 <%= stylesheet_link_tag "style.css" %>
       
 <%= render 'nav' %>
-<div class="page-header"><h1>Sign up for Artist</h1></div>
-
+<h1></h1>
+<div class="container body-container">
+      <div class="panel panel-default">
+        <div class="panel-heading"><strong>Welcome to SNU_ART!!</strong></div>
+        <div class="panel-body">
 <%= form_for :artist, url: artist_index_path do |f| %>
 
   <%= render 'errors', object: @artist %>
@@ -23,6 +26,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :"Confirm password" %>
+    <%= f.password_field :c_password, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :description %>
     <%= f.text_field :description, class: 'form-control' %>
   </div>
@@ -39,3 +47,6 @@
 
   <%= f.submit 'Upload', class: 'btn btn-primary' %>
 <% end %>
+        </div>
+    </div>
+  </div> <!-- /container -->
