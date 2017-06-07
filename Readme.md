@@ -1,4 +1,18 @@
-Rails!!
+SNU_ART Rails!!
+
+To Run
+
+1. git clone https://github.com/lbyunsml/web_programming_team1/
+
+2. git checkout new_snu_art
+
+In `snu_art`
+
+3. `rails db:seed`
+
+4. `rails db:migrate`
+
+5. `rails server`
 
 artist
 
