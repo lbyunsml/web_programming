@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607011647) do
+ActiveRecord::Schema.define(version: 20170607145545) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "login_id"
@@ -19,9 +19,13 @@ ActiveRecord::Schema.define(version: 20170607011647) do
     t.text     "description"
     t.string   "profile_img"
     t.string   "mail"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "password_digest"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "artworks", force: :cascade do |t|
@@ -30,8 +34,12 @@ ActiveRecord::Schema.define(version: 20170607011647) do
     t.string   "description"
     t.string   "category"
     t.integer  "artist_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["artist_id"], name: "index_artworks_on_artist_id"
   end
 
