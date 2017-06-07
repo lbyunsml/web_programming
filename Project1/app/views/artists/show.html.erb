@@ -1,0 +1,85 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Login:</strong>
+  <%= @artist.login_id %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @artist.password %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @artist.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @artist.description %>
+</p>
+
+<p>
+  <strong>Profile img:</strong>
+  <%= @artist.profile_img %>
+</p>
+
+<p>
+  <strong>Mail:</strong>
+  <%= @artist.mail %>
+</p>
+
+<h2>List of artworks</h2>
+<% @artist.artworks.each do |artwork| %>
+  <p>
+    <strong>Title:</strong>
+    <%= artwork.title %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= artwork.description %>
+  </p>
+  <p>
+    <strong>Category:</strong>
+    <%= artwork.category %>
+  </p>
+  <div class="media-left">
+    <%= link_to image_tag(artwork.image.url, class: 'media-object'), artwork.image.url, target: '_blank' %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= artwork.title %></h4>
+  </div>
+<% end %>
+
+<h2>Add an artwork:</h2>
+
+
+<%= form_for([@artist, @artist.artworks.build]) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.text_field :category, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: 'form-control'%>
+  </div>
+
+  <%= f.submit 'Upload', class: 'btn btn-primary' %>
+<% end %>
+
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>
