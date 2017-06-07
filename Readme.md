@@ -25,6 +25,7 @@ http://localhost:3000/category?cat=metal : metal에 대한 카테고리
 `rails new snu_art`
 모델추가
 	`rails generate model Comment commenter:string body:text article:references`
+    위치 app/models
 디비 생성
 	`rake db:migrate`
 config/routes.rb:
@@ -61,4 +62,10 @@ Category에서 get방식으로 파라미터를 받음. 현재 photo, metal, orie
 
 
 `rails generate model Artwork name:string img_path:string description:string category:string artist:references`
+
+------- password --------
+Artist의 로그인 아이디의 format체크 추가, password_digest 추가
+Gemfile에  `gem 'bcrypt', '~> 3.1.7'` 추가.
+`rails generate migration add_password_digest_to_users password_digest:string`추가
+이후 rails db:migrate로 클래스모델 업데이트
 

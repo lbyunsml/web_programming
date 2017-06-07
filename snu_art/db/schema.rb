@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603150427) do
+ActiveRecord::Schema.define(version: 20170607011647) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "login_id"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20170603150427) do
     t.text     "description"
     t.string   "profile_img"
     t.string   "mail"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
   create_table "artworks", force: :cascade do |t|

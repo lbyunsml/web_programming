@@ -27,7 +27,7 @@
               </li>
             </ul>
 
-           
+            <% if session[:user_id]==nil %>
             <!--sign in-->
             <ul id="signInDropdown" class="nav navbar-nav navbar-right">
               <li class="dropdown">
@@ -44,13 +44,15 @@
                           <%= ff.submit "Log in", class: "btn btn-info" %>
                         </div>
                       <% end %>
-                        <span class="pull-right"><a href="#">Join us!</a></span>
-                      
+                        <span class="pull-right"><a href="#">Join us!</a></span>   
                     </div>
                   </li>
                 </ul>
               </li>
             </ul>
+            <%else%>
+              HELLO
+            <%end%>
 
             <!--search-->
             <form class="navbar-form navbar-right" role="search">
@@ -65,3 +67,7 @@
           </div><!--/.navbar-collapse -->
         </div>
       </nav>
+
+<%flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>" style = "margin-bottom:0"><%= value %></div>
+<% end %>

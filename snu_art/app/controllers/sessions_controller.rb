@@ -2,13 +2,13 @@ class SessionsController < ApplicationController
   def new 
   end
   def create
-    user = Artist.find_by(id: params[:session][:email].downcase)
+    user = Artist.find_by(login_id: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to user
+      redirect_to :back, flash: {success: 'Login success'}
     else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+#      flash[:danger] = 'Invalid email/password combination'
+      redirect_to :back, flash: {danger: 'Invalid email/password combination'}
     end
   end
 
