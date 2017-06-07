@@ -89,8 +89,7 @@
 
   <div class="container">
 
-  
-    <% @artwork_all.each_slice(4) do |slice| %>
+    <% @artwork_all.reverse.each_slice(4) do |slice| %>
     <div class="row">
       <% slice.each do |artwork| %>
       <div class="col-md-3">
@@ -110,36 +109,15 @@
     <% end %>
 
 
-    <!--page bar at the bottom-->
-    <nav aria-label="Page navigation">
-      <div class="text-center">
-        <ul class="pagination">
-          <li>
-            <a href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="active"><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li>
-            <a href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
 
-    <hr>
-
-    <footer>
-      <p>&copy; 2017 Intro. to Web Programming Team I: 박지수, 변승무, 김진모, 김종석</p>
-    </footer>
   </div> <!-- /container -->
-
+    <div class="container" style = "margin-top:15px">
+      <hr>
+      <!--page bar at the bottom-->
+      <footer>
+        <p>&copy; 2017 Intro. to Web Programming Team I: 박지수, 변승무, 김진모, 김종석</p>
+      </footer>
+     </div>
 
 </body>
 </html>

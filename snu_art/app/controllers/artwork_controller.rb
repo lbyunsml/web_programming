@@ -1,7 +1,6 @@
 class ArtworkController < ApplicationController
   def index
-    @artist = Artist.find(params[:artist_id])
-    @artwork_all = @artist.artwork
+    redirect_to artist_path(params[:artist_id])
   end
   def show
     @artist = Artist.find(params[:artist_id])
