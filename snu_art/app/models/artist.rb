@@ -4,5 +4,8 @@ class Artist < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   has_many :artwork
+  
+  has_attached_file :image, :path => ":rails_root/public/artist/:id_:filename"
+  validates_attachment :image, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
   has_secure_password
 end
