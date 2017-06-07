@@ -27,8 +27,8 @@
               </li>
             </ul>
 
-            <% if session[:user_id]==nil %>
-            <!--sign in-->
+            <% if session[:user_id]==nil || Artist.find(session[:user_id])==nil %>
+            <!--Before Login-->
             <ul id="signInDropdown" class="nav navbar-nav navbar-right">
               <li class="dropdown">
                 <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-default navbar-btn dropdown-toggle">Sign in <span class="caret"></span></button>
@@ -51,7 +51,54 @@
               </li>
             </ul>
             <%else%>
-              HELLO
+            <% @login_artist = Artist.find(session[:user_id]) %>
+            <!--After Login, Add work -->
+            <ul class="nav navbar-nav navbar-centered2">
+             <a href="<%= new_artist_artwork_path(@login_artist.id) %>" class="btn btn-success navbar-btn">Add work</a>
+            </ul>
+            
+            <!--After Login, my profile-->
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <span class="glyphicon glyphicon-user"></span> 
+                  <strong><%= @login_artist.name %></strong>
+                  <span class="glyphicon glyphicon-chevron-down"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <div class="navbar-login">
+                      <div class="row">
+                        <div class="col-lg-4">
+                          <p class="text-center">
+                            <span class="glyphicon glyphicon-user icon-size"></span>
+                          </p>
+                        </div>
+                        <div class="col-lg-8">
+                          <p class="text-left"><strong><%= @login_artist.name %></strong></p>
+                          <p class="text-left small"><%= @login_artist.login_id %></p>
+                          <p class="text-left">
+                            <a href="<%= artist_path(@login_artist.id) %>" class="btn btn-primary btn-block btn-sm">My Profile</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <div class="navbar-login navbar-login-session">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <p>
+                            <%= link_to "Log out", logout_path, method: :delete, class: "btn btn-danger btn-block" %>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
             <%end%>
 
             <!--search-->

@@ -11,6 +11,10 @@ class SessionsController < ApplicationController
       redirect_to :back, flash: {danger: 'Invalid email/password combination'}
     end
   end
-
+  def destroy
+    session.delete(:user_id)
+    @login_artist = nil
+    redirect_to :back, flash: {success: 'Logged out'}
+  end
 
 end

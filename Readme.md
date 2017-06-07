@@ -63,6 +63,8 @@ Category에서 get방식으로 파라미터를 받음. 현재 photo, metal, orie
 
 `rails generate model Artwork name:string img_path:string description:string category:string artist:references`
 
+:back의 경우 링크로 입력한경우에는 Nil을 가지게 된다. 따라서 링크를 마구 눌러 들어가는 경우를 exception하는 작업시 처리는 `root_path`로 redirect시켰다.
+
 ------- password --------
 Artist의 로그인 아이디의 format체크 추가, password_digest 추가
 Gemfile에  `gem 'bcrypt', '~> 3.1.7'` 추가.
