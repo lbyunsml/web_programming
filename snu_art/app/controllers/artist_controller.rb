@@ -6,9 +6,13 @@ class ArtistController < ApplicationController
       @artist_all = Artist.all
 	end
     def create
-      if artist_params[:password] != artist_params[:c_password]
+      if artist_params[:password] != params[:artist][:c_password]
         @artist = Artist.new
         @artist.errors[:base] << "Password should be same"
+        render 'new'
+      elsif artist_params[:image] == nil
+        @artist = Artist.new
+        @artist.errors[:base] << "You should upload image"
         render 'new'
       else
         @artist = Artist.new(artist_params)
@@ -27,6 +31,6 @@ class ArtistController < ApplicationController
   
    # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:id, :login_id, :password, :name, :description, :image, :mail, :c_password)
+      params.require(:artist).permit(:id, :login_id, :password, :name, :description, :image, :mail)
     end
 end

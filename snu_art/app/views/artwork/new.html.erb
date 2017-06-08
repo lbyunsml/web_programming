@@ -10,7 +10,7 @@
         <div class="panel-heading"><strong>Upload your own Art!</strong> <small>(1 image per artwork)</small></div>
         <div class="panel-body">
 <%= form_for :artwork, url: artist_artwork_index_path(@artist.id) do |f| %>
-
+  <%= render 'artist/errors', object: @artwork %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>

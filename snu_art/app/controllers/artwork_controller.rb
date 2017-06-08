@@ -14,12 +14,22 @@ class ArtworkController < ApplicationController
   end
   def create
     @artist = Artist.find(params[:artist_id])
-    @artwork = @artist.artwork.create(artwork_params)
-    if @artwork
-      @artwork.update(img_path: @artwork.id.to_s+"_"+@artwork.image_file_name)
-      redirect_to @artist, flash: {success: 'The artwork has added!'}
+    if artwork_params[:image] == nil
+        @artwork = Artwork.new
+        @artwork.errors[:base] << "You should upload image"
+        render 'new'
+    elsif artwork_params[:name] == ""
+        @artwork = Artwork.new
+        @artwork.errors[:base] << "You should write name"
+        render 'new'
     else
-      render 'new'
+      @artwork = @artist.artwork.create(artwork_params)
+      if @artwork
+        @artwork.update(img_path: @artwork.id.to_s+"_"+@artwork.image_file_name)
+        redirect_to @artist, flash: {success: 'The artwork has added!'}
+      else
+        render 'new'
+      end
     end
   end
 
