@@ -39,7 +39,7 @@
       </div>
     
   <% if @artwork_all != nil %>
-    <% @artwork_all.each_slice(4) do |slice| %>
+    <% @artwork_all.reverse.each_slice(4) do |slice| %>
       <div class="row">
         <% slice.each do |artwork| %>
         <div class="col-md-3">
