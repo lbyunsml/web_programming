@@ -1,6 +1,6 @@
 SNU_ART Rails!!
 
-To Run
+# To Run
 
 1. git clone https://github.com/lbyunsml/web_programming_team1/
 
@@ -8,42 +8,75 @@ To Run
 
 In `snu_art`
 
-3. `rails db:seed`
+3. `bundle install`
 
 4. `rails db:migrate`
 
-5. `rails server`
+5. `rails db:reset`
+
+6. `rails server`
+
+7. localhost:3000/ 으로 접속
+
+# Routes
 
 artist
+
+  |-- _errors.html.erb : error 템플릿
 
   |-- _nav.html.erb : navigation bar 템플릿
   
   |-- index.html.erb : main page
   
-  |-- show.html.erb : artist/[:id] : id에 해당되는 아티스트의 페이지
+  |-- show.html.erb : artist/[:artist_id] : artist_id에 해당되는 아티스트의 페이지
   
   |-- new.html.erb : 새로운 아티스트 등록
+
+artist/[:artist_id]/artwork/
+
+  |-- index.html.erb : dummy, 들어가면 artist/[:artist_id]로 자동 redirect된다.
   
-artist/artist_id/artwork : 현재 artist_id에 해당되는 그림들을 모두 보여준다.
+  |-- show.html.erb : artwork/[:id] : id에 해당되는 artwork.
+  
+  |-- new.html.erb : artist_id가 owner인 새로운 artwork 등록
 
 category
-  |-- index.html.erb : 모든 Artwork를 보여준다.
 
-Example site
+  |-- index.html.erb : 카테고리 페이지를 보여준다. cat이라는 parameter를 Get방식으로 받는다.
+  
+sessions
 
-localhost:3000/
+  |-- /login : 해당 아이디 패스워드가 validate하면 세션을 시작한다.
+  
+  |-- /logout : 세션을 종료한다.
 
-http://localhost:3000/artist/new : 현재 db에 있는 artist들의 것을 보여주는 페이지 
+# Examples
+
+http://localhost:3000/ : 메인페이지
 
 http://localhost:3000/artist/1 : artist 1의 페이지
 
-http://localhost:3000/artist/1/artwork : artist1이 그린 그림들 목록
+http://localhost:3000/artist/9/artwork/65 : 64번 작품의 페이지
 
 http://localhost:3000/category?cat=metal : metal에 대한 카테고리
 
+# 역할분담
+
+기획 : 
+
+자료 수집 : 
+
+정적 페이지 제작 : 
+
+이미지 업로드 : 
+
+로그인 기능 : 
 
 
------- 명령어 정리 -------
+
+
+
+------- 명령어 정리 -------
 
 `rails new snu_art`
 
@@ -58,9 +91,12 @@ http://localhost:3000/category?cat=metal : metal에 대한 카테고리
 	`rake db:migrate`
 
 config/routes.rb:
-	`resources :articles do
-		resources :comments
-	end`
+
+    `resources :articles do`
+
+    `    resources :comments`
+	
+    `end`
     
 라우트 생성
 
@@ -102,6 +138,7 @@ Category에서 get방식으로 파라미터를 받음. 현재 photo, metal, orie
 :back의 경우 링크로 입력한경우에는 Nil을 가지게 된다. 따라서 링크를 마구 눌러 들어가는 경우를 exception하는 작업시 처리는 `root_path`로 redirect시켰다.
 
 ------- password --------
+
 Artist의 로그인 아이디의 format체크 추가, password_digest 추가
 
 Gemfile에  `gem 'bcrypt', '~> 3.1.7'` 추가.
@@ -112,3 +149,8 @@ bundle install
 
 이후 rails db:migrate로 클래스모델 업데이트
 
+------- image --------
+
+paperclip gem 설치
+
+`rails g paperclip class attachment`
