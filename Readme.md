@@ -60,6 +60,12 @@ http://localhost:3000/artist/9/artwork/65 : 64번 작품의 페이지
 
 http://localhost:3000/category?cat=metal : metal에 대한 카테고리
 
+Sample login 계정
+
+  ID: spizak@gmail.com, Password: spizak
+  
+  `db/seeds.rb`를 참고하세요.
+
 # 역할분담
 
 기획 : 변승무, 박지수
